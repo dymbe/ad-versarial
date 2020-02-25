@@ -219,3 +219,8 @@ def init_yolo(sess, inputs, num_classes, weights, header_size=5):
     boxes = detections_boxes(detections)
     sess.run(load_ops)
     return detections, boxes
+
+
+config = tf.ConfigProto()
+config.gpu_options.allow_growth = True
+sess = tf.Session(config=config)
